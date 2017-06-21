@@ -5,8 +5,13 @@ import { Table } from 'react-bootstrap';
 
 class WeatherList extends Component {
 
+  // measurement options: 'temp', 'pressure', 'humidity'
   getWeatherData(cityData, measurement) {
     return cityData.list.map((weatherData) => {
+      if (measurement === 'temp') {
+        // Convert kelvin to celsius
+        return weatherData.main[measurement] - 273.15;
+      }
       return weatherData.main[measurement];
     });
   }
@@ -19,16 +24,22 @@ class WeatherList extends Component {
           <td>
             <Chart
               data={ this.getWeatherData(cityData, 'temp') }
+              color='red'
+              unit='°C'
             />
           </td>
           <td>
             <Chart
               data={ this.getWeatherData(cityData, 'pressure') }
+              color='blue'
+              unit='hPa'        
             />
           </td>
           <td>
             <Chart
               data={ this.getWeatherData(cityData, 'humidity') }
+              color='green'
+              unit='%'        
             />
           </td>
         </tr>
