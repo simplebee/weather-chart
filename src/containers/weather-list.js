@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
-
+import Chart from '../components/chart';
 import { Table } from 'react-bootstrap';
 
 class WeatherList extends Component {
@@ -18,19 +17,19 @@ class WeatherList extends Component {
         <tr key={ cityData.city.id }>
           <td>{ cityData.city.name }</td>
           <td>
-            <Sparklines data={ this.getWeatherData(cityData, 'temp') }>
-              <SparklinesLine />
-            </Sparklines>
+            <Chart
+              data={ this.getWeatherData(cityData, 'temp') }
+            />
           </td>
           <td>
-            <Sparklines data={ this.getWeatherData(cityData, 'pressure') }>
-              <SparklinesLine />
-            </Sparklines>
+            <Chart
+              data={ this.getWeatherData(cityData, 'pressure') }
+            />
           </td>
           <td>
-            <Sparklines data={ this.getWeatherData(cityData, 'humidity') }>
-              <SparklinesLine />
-            </Sparklines>
+            <Chart
+              data={ this.getWeatherData(cityData, 'humidity') }
+            />
           </td>
         </tr>
       );
@@ -40,7 +39,6 @@ class WeatherList extends Component {
   render() {
     return (
       <Table hover>
-        { console.log(this.props.weather) }
         <thead>
           <tr>
             <th>City</th>
