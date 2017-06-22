@@ -1,6 +1,5 @@
 import React from 'react';
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
-import '../styles/chart.css'
 
 function average(arr) {
   return Math.round(arr.reduce((a, b) => { return a + b; }) / arr.length);

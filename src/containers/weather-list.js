@@ -52,10 +52,10 @@ class WeatherList extends Component {
       <Table hover>
         <thead>
           <tr>
-            <th>City</th>
-            <th>Temperature</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
+            <th className='col-xs-3'>City</th>
+            <th className='col-xs-3'>Temperature</th>
+            <th className='col-xs-3'>Pressure</th>
+            <th className='col-xs-3'>Humidity</th>
           </tr>
         </thead>
         <tbody>
