@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions';
 
 import { FormGroup, InputGroup, Button, FormControl } from 'react-bootstrap';
+import '../styles/search-bar.css';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class SearchBar extends Component {
               type="text"
               value={ this.state.q }
               onChange={ this.handleInputChange }
-              placeholder="Search for a city"
+              placeholder="Get a 5 day forecast for your city"
             />
             <InputGroup.Button>
               <Button type="submit">Submit</Button>
