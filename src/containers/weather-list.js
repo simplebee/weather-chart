@@ -20,26 +20,29 @@ class WeatherList extends Component {
     return this.props.weather.map((cityData) => {
       return (
         <tr key={ cityData.city.id }>
-          <td>{ cityData.city.name }</td>
+          <td>
+            <div>{ cityData.city.name }</div>
+            <div>{ cityData.city.country }</div>
+          </td>
           <td>
             <Chart
               data={ this.getWeatherData(cityData, 'temp') }
-              color='red'
-              unit='°C'
+              color="red"
+              unit="°C"
             />
           </td>
           <td>
             <Chart
               data={ this.getWeatherData(cityData, 'pressure') }
-              color='blue'
-              unit='hPa'        
+              color="blue"
+              unit="hPa"
             />
           </td>
           <td>
             <Chart
               data={ this.getWeatherData(cityData, 'humidity') }
-              color='green'
-              unit='%'        
+              color="green"
+              unit="%"
             />
           </td>
         </tr>
@@ -52,10 +55,10 @@ class WeatherList extends Component {
       <Table hover>
         <thead>
           <tr>
-            <th className='col-xs-3'>City</th>
-            <th className='col-xs-3'>Temperature</th>
-            <th className='col-xs-3'>Pressure</th>
-            <th className='col-xs-3'>Humidity</th>
+            <th className="col-xs-3">City</th>
+            <th className="col-xs-3">Temperature</th>
+            <th className="col-xs-3">Pressure</th>
+            <th className="col-xs-3">Humidity</th>
           </tr>
         </thead>
         <tbody>

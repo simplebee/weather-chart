@@ -14,6 +14,12 @@ class SearchBar extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    
+    this.initialize();
+  }
+
+  initialize() {
+    this.props.fetchWeather('london,uk');
   }
 
   handleInputChange(e) {

@@ -5,6 +5,6 @@ export default function weather(state = [], action) {
     case actionType.FETCH_WEATHER:
       return [action.payload.data, ...state];
     default:
-      return  state;
+      return state;
   }
 }
